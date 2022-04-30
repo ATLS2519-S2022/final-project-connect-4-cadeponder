@@ -57,7 +57,7 @@ public class AlphabetaPlayer implements Player {
 	        		for (int i=0; i<cols; i++) { //iterates through 7 cols
 	        			if (board.isValidMove(i)) {//if valid move
 	        				board.move(i, id);
-	        				bestScoresArray[i]= alphabeta(board, depth, true,arb); 
+	        				bestScoresArray[i]= alphabeta(board, depth,-1000,1000, true,arb); 
 	        				board.unmove(i, id);
 	        					if (bestScoresArray[i]>maxScore) {
 	        						maxScore=bestScoresArray[i];
