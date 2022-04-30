@@ -1,29 +1,5 @@
 
 public class AlphabetaPlayer implements Player {
-//	function alphabeta(node, depth, alpha, beta, maximizingPlayer) { 
-//	if depth ==0 or node is a terminal node then  
-//	return static evaluation of node  
-//	  
-//	if MaximizingPlayer then      // for Maximizer Player  
-//	   maxEva= -infinity            
-//	   for each child of node do  
-//	   eva= alphabeta(child, depth-1, alpha, beta, False)  
-//	  maxEva= max(maxEva, eva)   
-//	  alpha= max(alpha, maxEva)      
-//	   if beta<=alpha  
-//	 break  
-//	 return maxEva  
-//	    
-//	else                         // for Minimizer player  
-//	   minEva= +infinity   
-//	   for each child of node do  
-//	   eva= alphabeta(child, depth-1, alpha, beta, true)  
-//	   minEva= min(minEva, eva)   
-//	   beta= min(beta, eva)  
-//	    if beta<=alpha  
-//	  break          
-//	 return minEva 
-//	}
 	int id; 
     int cols; 
     
@@ -108,41 +84,6 @@ public class AlphabetaPlayer implements Player {
 			 return bestScore;
 		 }
 	 }
-	   
-//	    public int alphabeta(Connect4Board board, int depth, boolean isMaximizing, Arbitrator arb) {
-//	    	
-////	    	if depth = 0 or there's no moves left or time is up
-////	    			return the heuristic value of node 
-//	    	
-//	    	if (depth == 0 || board.numEmptyCells() == 0 || arb.isTimeUp()) {
-//	    		return score(board);
-//	    	}
-//	    	
-//	    	if (isMaximizing) {
-//	    		int bestScore = -1000;
-//	    		for(int i=0; i<cols; i++) {
-//	    			if (board.isValidMove(i)) {
-//						board.move(i, id);
-//	    				bestScore = Math.max(bestScore, alphabeta(board, depth - 1, false, arb)); 
-//	    				board.unmove(i, id);
-//	    			}
-//	    		}
-//	    		return bestScore;
-//	    	}
-//	    	
-//	    	
-//	    	else {
-//	    		int bestScore = 1000;
-//	    		for(int i=0; i<cols; i++) {
-//	    			if (board.isValidMove(i)) {
-//	    				board.move(i, 3-id);
-//	    				bestScore = Math.min(bestScore, alphabeta(board, depth - 1, true, arb)); 
-//	    				board.unmove(i, 3-id);
-//	    			}
-//	    		}
-//	    		return bestScore;
-//	    	}
-//	    }
 	    
 	 public int score(Connect4Board board) {
 	    	return calcScore(board, id) - calcScore(board, 3-id);
